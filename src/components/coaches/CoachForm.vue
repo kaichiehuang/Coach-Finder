@@ -51,6 +51,7 @@
 
 <script> 
 export default {
+  emits: ['save-data'],
   data() {
     return {
       firstName: '',
@@ -71,7 +72,7 @@ export default {
         levels: this.levels,
         sport: this.sportName
       }
-      console.log(formData)
+      this.$emit('save-data', formData);
     }
   }
 }
