@@ -4,17 +4,16 @@
     <h4>{{ sportName }}</h4>
     <h4>${{ rate }}/hour</h4>
     <div>
-      <span v-for="level in levels" :key="level">{{ level }} </span>
+      <base-badge v-for="level in levels" :key="level" :type="level" :title='level'></base-badge>
     </div>
     <div class="actions">
-      <router-link :to="coachContactLink">Contact</router-link>
-      <router-link :to="coachDetailsLink">View Details</router-link>
+      <base-button mode="outline" link :to="coachContactLink">Contact</base-button>
+      <base-button link :to="coachDetailsLink">View Details</base-button>
     </div>
   </li>
 </template>
 
 <script>
-
 export default {
   props: ['id', 'firstName', 'lastName', 'rate', 'sportName', 'levels'],
   computed: {
