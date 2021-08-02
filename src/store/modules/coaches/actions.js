@@ -10,8 +10,10 @@ export default {
       sportName: data.sport
     };
 
+    const token = context.rootGetters.token;
+
     const response = await fetch(
-      `https://vue-html-demo-337a6-default-rtdb.firebaseio.com/coaches/${userId}.json`,
+      `https://vue-html-demo-337a6-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=`+token,
       {
         method: 'PUT',
         body: JSON.stringify(coachData)
